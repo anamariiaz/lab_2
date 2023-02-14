@@ -1,10 +1,10 @@
 /* specify formatting of the 3 maps contained in the class "map" */
 .map {
     position: absolute;
-    top: 830px;
+    top: 830px; /* place maps below the text and images on the page */
     bottom: 0;
-    width: 30%;
-    height: 500px
+    width: 30%; /* ensure each of the 3 maps takes up 30% width */
+    height: 500px /* manually specify the 3 maps' heights */
 }
 
 /* assign the custom university point markers contained in the class "marker" to a custom image "cap.png" and format them according to https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/  */

@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- define a title for the web page (that will appear in the browser) -->
-    <title>Transportation to Universities</title>
+    <title>Transportation to Toronto Universities</title>
     <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) --> 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
@@ -51,17 +51,17 @@
         <div class="row justify-content-center"> 
             <!-- define a new column which takes up 4 Bootstrap column units --> 
             <div class="col-4">
-                <!-- define a new section within the column which has the first map embedded within it --> 
+                <!-- define a new section within the column which will have the first map embedded within it --> 
                 <div id='map1' class = 'map'></div>
             </div>
             <!-- define a new column which takes up 4 Bootstrap column units -->
             <div class="col-4">
-                <!-- define a new section within the column which has the second map embedded within it --> 
+                <!-- define a new section within the column which will have the second map embedded within it --> 
                 <div id='map2' class = 'map'></div>
             </div>
             <!-- define a new column which takes up 4 Bootstrap column units -->
             <div class="col-4">
-                <!-- define a new section within the column which has the third map embedded within it --> 
+                <!-- define a new section within the column which will have the third map embedded within it --> 
                 <div id='map3' class = 'map'></div>
             </div>
         </div>
@@ -80,14 +80,17 @@
 
         <!-- define a new row and centre all content of the row -->
         <div class="row justify-content-center">
-            <!-- define a new section within the column which has centered text within it -->
-            <div class="text-center">
-                <!-- include the local ttc.png image on the page -->
-                <img src="ttc.png" width="500" height="300">
-                <!-- specify text to be displayed at a paragraph level with a link that opens the 'TTC' page in the same window-->
-                <p>
-                Source: <a href="https://www.ttc.ca/riding-the-ttc/Explore-Toronto">TTC</a>
-                </p>
+            <!-- define a new column which takes up 8 Bootstrap column units -->
+            <div class="col-8">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- include the local ttc.png image on the page -->
+                    <img src="ttc.png" width="500" height="300">
+                    <!-- specify text to be displayed at a paragraph level with a link that opens the 'TTC' page in the same window-->
+                    <p>
+                    Source: <a href="https://www.ttc.ca/riding-the-ttc/Explore-Toronto">TTC</a>
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -137,7 +140,7 @@
                     purpose of this map. "Places of interest" as well as administrative labels are also removed, to allow focus on the 
                     overlaid data layers, as well as the public transit labels and road labels which are kept. The public transit labels' colors are modified 
                     to aid them in standing out, icons are added to allow visual disntinction amongst various forms of transit, and zoom levels
-                    are modified such that the symbols appear only past zoom level 8.
+                    are modified such that the symbols appear only past zoom level 12.
                     <br>2 data layers are displayed on this map: a subway network geojson and a geojson highlighting the central location of
                     5 universities in Toronto. The first is downloaded from 
                     <a href="https://open.toronto.ca/dataset/ttc-subway-shapefiles/">Open Data Toronto</a>
