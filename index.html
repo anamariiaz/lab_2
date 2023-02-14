@@ -1,0 +1,188 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+    <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- define a title for the web page (that will appear in the browser) -->
+    <title>Transportation to Universities</title>
+    <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) --> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked --> 
+          <a class="navbar-brand" href="#">Navigate</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <!-- specify that the web page should not redirect when "Home" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the "Home" button of the navbar should be highlighted while on the "Home" page  -->
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <a class="nav-link" href="more_info.html">More Info</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+    <div class="container"> 
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center"> 
+            <!-- define a new column which takes up 4 Bootstrap column units --> 
+            <div class="col-4">
+                <!-- define a new section within the column which has the first map embedded within it --> 
+                <div id='map1' class = 'map'></div>
+            </div>
+            <!-- define a new column which takes up 4 Bootstrap column units -->
+            <div class="col-4">
+                <!-- define a new section within the column which has the second map embedded within it --> 
+                <div id='map2' class = 'map'></div>
+            </div>
+            <!-- define a new column which takes up 4 Bootstrap column units -->
+            <div class="col-4">
+                <!-- define a new section within the column which has the third map embedded within it --> 
+                <div id='map3' class = 'map'></div>
+            </div>
+        </div>
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center">
+            <!-- define a new column which takes up 8 Bootstrap column units -->
+            <div class="col-8">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 1 level -->
+                    <h1>Modes of Transport to Toronto's Universities</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center">
+            <!-- define a new section within the column which has centered text within it -->
+            <div class="text-center">
+                <!-- include the local ttc.png image on the page -->
+                <img src="ttc.png" width="500" height="300">
+                <!-- specify text to be displayed at a paragraph level with a link that opens the 'TTC' page in the same window-->
+                <p>
+                Source: <a href="https://www.ttc.ca/riding-the-ttc/Explore-Toronto">TTC</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center"> 
+            <!-- define a new column which takes up 4 Bootstrap column units --> 
+            <div class="col-4">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 2 level -->
+                    <br>
+                    <h2>Biking</h2>
+                </div>
+                <!-- specify text to be displayed at a paragraph level with links that open the data source pages in the same window -->
+                <p>The map below demonstrates the feasibility of biking to various Toronto universities. 
+                    Its base map style is an extension upon the Mapbox "Outdoors" style, 
+                    which displays hillshading and terrain contours that can aid bikers in judging the possibility of cycling over various relief. 
+                    The base map colors are modified to only distinguish various forms of greenspace from water and other general land:
+                    color distinctions between residential, commercial, industrial areas, hospitals, municipal buildings, etc. are removed
+                    as found unecessary for the purpose of this map. "Places of interest", transit, as well as administrative labels 
+                    are also removed (only road labels are kept) to allow focus on the overlaid data of the map. Opacity and color of terrain features
+                    are also modified to accentuate relief, and zoom levels are edited such that the latter only appear past zoom level 13. 
+                    <br>2 data layers are displayed on this map: a cycling network geojson and a geojson highlighting the central location of
+                    5 universities in Toronto. The first is downloaded from 
+                    <a href="https://open.toronto.ca/dataset/bikeways/">Open Data Toronto</a> in the form of a geojson,
+                    and contains bikeways of the city in the form of linestrings, while the second is created using
+                    <a href="https://geojson.io/#map=2/0/20">geojson.io</a> and contains 5 points representing the 5 universities. 
+                    The former is imported as type "line", while the latter is imported as type "symbol" (such that it displays labels with the 
+                    names of the schools as opposed to points of the schools' locations). The symbology of these data are edited using the 
+                    Mapbox 'paint' and 'layout' layer properties. Additionally, custom markers are added to the university locations. 
+                </p>
+            </div>
+            <!-- define a new column which takes up 4 Bootstrap column units --> 
+            <div class="col-4">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 2 level -->
+                    <br>
+                    <h2>Taking Public Transit</h2>
+                </div>
+                <!-- specify text to be displayed at a paragraph level with links that open the data source pages in the same window -->
+                <p>The map below demonstrates the feasibility of taking public transit to various Toronto universities.
+                    Its base map style is an extension upon the Mapbox "Monochrome" style, 
+                    which displays a grayscale view that eases the visibility of any labels and icons placed atop it. The base map colors
+                    are modified to distinguish between greenspace (as a whole), water, and other general land: color distinctions between 
+                    residential, commercial, industrial areas, hospitals, municipal buildings, etc. are removed as found unecessary for the 
+                    purpose of this map. "Places of interest" as well as administrative labels are also removed, to allow focus on the 
+                    overlaid data layers, as well as the public transit labels and road labels which are kept. The public transit labels' colors are modified 
+                    to aid them in standing out, icons are added to allow visual disntinction amongst various forms of transit, and zoom levels
+                    are modified such that the symbols appear only past zoom level 8.
+                    <br>2 data layers are displayed on this map: a subway network geojson and a geojson highlighting the central location of
+                    5 universities in Toronto. The first is downloaded from 
+                    <a href="https://open.toronto.ca/dataset/ttc-subway-shapefiles/">Open Data Toronto</a>
+                    as a shapefile, and is converted manually to geojson through GIS software. It contains subway routes of the city 
+                    in the form of linestrings. The second is created using <a href="https://geojson.io/#map=2/0/20">geojson.io</a> and contains 5 
+                    points representing the 5 universities. The former is imported as type "line", while the latter is imported as type "symbol" 
+                    (such that it displays labels with the names of the schools as opposed to points of the schools' locations). The symbology of these 
+                    data are edited using the Mapbox 'paint' and 'layout' layer properties. Additionally, custom markers are added to the university locations. 
+                </p>
+            </div>
+            <!-- define a new column which takes up 4 Bootstrap column units --> 
+            <div class="col-4">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 2 level -->
+                    <br>
+                    <h2>Driving</h2>
+                </div>
+                <!-- specify text to be displayed at a paragraph level with links that open the data source pages in the same window -->
+                <p>The map below demonstrates the feasibility of driving to various Toronto universities.
+                    Its base map style is an extension upon the Mapbox "Navigation-Light" style, 
+                    which displays the traffic condition on roads. The base map colors are modified to specify the colorscale of low-severe
+                    traffic, and to distinguish between greenspace (as a whole), water, and other general land: color distinctions between 
+                    residential, commercial, industrial areas, hospitals, municipal buildings, etc. are removed as found unecessary for the 
+                    purpose of this map. "Places of interest", transit, as well as administrative labels are also removed to allow focus on the 
+                    overlaid data layers, the traffic conditions, and the road labels which are kept.
+                    <br>2 data layers are displayed on this map: a parking lots vector layer and a geojson highlighting the central location of
+                    5 universities in Toronto. The first is downloaded from 
+                    <a href="https://open.toronto.ca/dataset/topographic-mapping-physical-area-of-parking-lots/">Open Data Toronto</a> as 
+                    a shapefile, is converted manually to geojson through GIS software, then uploaded as a tileset to Mapbox to be usable as a vector layer.
+                    It contains parking lots of the city in the form of polygons which appear on the map at zoom levels past 13. The second is created using 
+                    <a href="https://geojson.io/#map=2/0/20">geojson.io</a> and contains 5 points representing the 5 universities. The former is imported as 
+                    type "fill", while the latter is imported as type "symbol" (such that it displays labels with the names of the schools as opposed to points 
+                    of the schools' locations). The symbology of these data are edited using the Mapbox 'paint' and 'layout' layer properties. 
+                    Additionally, custom markers are added to the university locations.      
+                </p>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- provide links to the local script.js file and the external Bootstrap Javascript bundle (which allow the functionality of the page) --> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

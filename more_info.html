@@ -1,0 +1,100 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+    <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- define a title for the web page (that will appear in the browser) -->
+    <title>Transportation to Universities</title>
+    <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) --> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+     <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked --> 
+          <a class="navbar-brand" href="#">Navigate</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local index.html file when "Home" is clicked in the navbar while on the "More Info" page -->
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should not redirect when "More Info" is clicked in the navbar while on the "More Info" page -->
+                <!-- specify that the "More Info" button of the navbar should be highlighted while on the "More Info" page  -->
+                <a class="nav-link active" href="#">More Info</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+    <div class="container"> 
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center"> 
+            <!-- define a new column which takes up 8 Bootstrap column units -->
+            <div class="col-8">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 1 level -->
+                    <h1>More Information</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- define a new row and centre all content of the row -->
+        <div class="row justify-content-center"> 
+            <!-- define a new column which takes up 8 Bootstrap column units -->
+            <div class="col-8">
+                <!-- define a new section within the column which has centered text within it -->
+                <div class="text-center">
+                    <!-- specify text to be displayed at a heading 1 level -->
+                    <p class=info>
+                        Click the links below to find out more about modes of transport to Toronto universities:
+                    </p>
+                </div>
+                <!-- specify text to be displayed in an unordered (bullet point) list with links that open the web pages in a new window -->
+                <ul class=info>
+                    <li>
+                        <a target=”_blank” href="https://future.utoronto.ca/university-life/transportation/">University of Toronto (St. George & Scarborough)</a>
+                    </li>
+                    <li>
+                        <a target=”_blank” href="https://www.torontomu.ca/faculty-affairs/faculty-resources/recruitment/resources-for-new-faculty/transportation-parking/#:~:text=TMU's%20campus%20is%20located%20between,one%20block%20east%20of%20Yonge.">Toronto Metropolitan University</a>
+                    </li>
+                    <li>
+                        <a target=”_blank” href="https://maps.info.yorku.ca/transit-driving-directions/">York University</a>
+                    </li>
+                    
+                    <li>
+                        <a target=”_blank” href="https://map.ocadu.ca/?id=1998#!ce/60094?ct/60994,60995,60996,60997,60998,61000,61001,61002,61003,61004,61005,61006,61138,61139,61140,61141,61142,61143,61144,61146,61147,61148,61149,61150,61151,61152,61153,61154,61155,61156,61157,61159,61160,61161,61162,61163,61165,61166,61167,61168,61169,61170,61174,61175,61176,61177,61178,61179,61181,61182,61183,61184,61185,61186,61187,61188,61189,61190,61191,61192,61193,61194,61195,61196,61197,61198,61199,61200?s/">OCAD University</a>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- provide links to the local script.js file and the external Bootstrap Javascript bundle (which allow the functionality of the page) --> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

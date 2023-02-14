@@ -1,0 +1,43 @@
+/* specify formatting of the 3 maps contained in the class "map" */
+.map {
+    position: absolute;
+    top: 830px;
+    bottom: 0;
+    width: 30%;
+    height: 500px
+}
+
+/* assign the custom university point markers contained in the class "marker" to a custom image "cap.png" and format them according to https://docs.mapbox.com/help/tutorials/custom-markers-gl-js/  */
+.marker {
+background-image: url('data/cap.png');
+background-size: cover;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+cursor: pointer;
+}
+
+/* specify font size and color for text with class heading 1, heading 2, paragraph, and "info" */
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    color: brown;
+
+}
+
+p {
+    font-size: 10px;
+}
+
+.info {
+    font-size: 15px;
+}
+
+/* specify the background color of the pages */
+body {
+    background-color: #D3D3D3; 
+}
+
